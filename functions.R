@@ -1,4 +1,3 @@
-#' Author: Jessica Handy
 #' Date created: 8 FEB 2025
 #' Date last modified: 15 FEB 2025
 #' Purpose: Defines functions needed for point estimation and bounds
