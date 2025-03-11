@@ -1,4 +1,4 @@
-# [Name of Paper]
+# An approach to estimating how effective and well-targeted Extreme Risk Protection Orders have been with respect to suicide prevention 
 
 Template files for you to perform your own analyses are included here.
 - functions.R stores the underlying functions. 
