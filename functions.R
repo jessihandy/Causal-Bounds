@@ -1,3 +1,4 @@
+#' Author: Jessica Handy
 #' Date created: 8 FEB 2025
 #' Date last modified: 1 APR 2025
 #' Purpose: Defines functions needed for point estimation and bounds
@@ -55,12 +56,12 @@ lb.nt <- function(data){
            (py1z1(data)-pa1z1(data)) / pa0z1(data), 
            (py1z0(data)-pa1z1(data)) / pa0z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal 
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z1(data)/pa0z1(data),
                       py1z0(data)/pa0z1(data))),
                  (max(0,
                       (py1z1(data)-pa1z1(data)) / pa0z1(data), 
-                      (py1z0(data)-pa1z1(data)) / pa0z1(data)))), 
+                      (py1z0(data)-pa1z1(data)) / pa0z1(data))))), 
     NA, 
     max(0,
       (py1z1(data)-pa1z1(data)) / pa0z1(data), 
@@ -75,12 +76,12 @@ ub.nt <- function(data){
          (py1z1(data)-pa1z1(data)) / pa0z1(data), 
          (py1z0(data)-pa1z1(data)) / pa0z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal 
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z1(data)/pa0z1(data),
                       py1z0(data)/pa0z1(data))),
                  (max(0,
                       (py1z1(data)-pa1z1(data)) / pa0z1(data), 
-                      (py1z0(data)-pa1z1(data)) / pa0z1(data)))), 
+                      (py1z0(data)-pa1z1(data)) / pa0z1(data))))), 
     NA, 
     min(1, 
         py1z1(data)/pa0z1(data),
@@ -96,12 +97,12 @@ lb.co <- function(data){
            (py1z1(data)-pa0z1(data)) / pa1z1(data), 
            (py1z1(data)-py1z0(data)) / pa1z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal 
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z1(data)/pa1z1(data),
                       ((py1z1(data)-py1z0(data))/pa1z1(data))+1)),
                  (max(0,
                       (py1z1(data)-pa0z1(data)) / pa1z1(data), 
-                      (py1z1(data)-py1z0(data)) / pa1z1(data)))),
+                      (py1z1(data)-py1z0(data)) / pa1z1(data))))),
     NA, 
     (max(0,
          (py1z1(data)-pa0z1(data)) / pa1z1(data), 
@@ -116,12 +117,12 @@ ub.co <- function(data){
            (py1z1(data)-pa0z1(data)) / pa1z1(data), 
            (py1z1(data)-py1z0(data)) / pa1z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal 
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z1(data)/pa1z1(data),
                       ((py1z1(data)-py1z0(data))/pa1z1(data))+1)),
                  (max(0,
                       (py1z1(data)-pa0z1(data)) / pa1z1(data), 
-                      (py1z1(data)-py1z0(data)) / pa1z1(data)))),
+                      (py1z1(data)-py1z0(data)) / pa1z1(data))))),
     NA, 
     (min(1, 
          py1z1(data)/pa1z1(data),
@@ -137,12 +138,12 @@ lb <- function(data){
            (py1z0(data)-pa0z1(data)) / pa1z1(data), 
            (py1z0(data)-py1z1(data)) / pa1z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal 
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z0(data)/pa1z1(data),
                       ((py1z0(data)-py1z1(data))/pa1z1(data))+1)),
                  (max(0,
                       (py1z0(data)-pa0z1(data)) / pa1z1(data), 
-                      (py1z0(data)-py1z1(data)) / pa1z1(data)))),
+                      (py1z0(data)-py1z1(data)) / pa1z1(data))))),
     NA, 
     max(0,
         (py1z0(data)-pa0z1(data)) / pa1z1(data), 
@@ -157,12 +158,12 @@ ub <- function(data){
            (py1z0(data)-pa0z1(data)) / pa1z1(data), 
            (py1z0(data)-py1z1(data)) / pa1z1(data)))
     # error where min(a) = 1 < max(b) = 1 resolved by checking that values are not equal
-    & !all.equal((min(1, 
+    & !isTRUE(all.equal((min(1, 
                       py1z0(data)/pa1z1(data),
                       ((py1z0(data)-py1z1(data))/pa1z1(data))+1)),
                  (max(0,
                       (py1z0(data)-pa0z1(data)) / pa1z1(data), 
-                      (py1z0(data)-py1z1(data)) / pa1z1(data)))), 
+                      (py1z0(data)-py1z1(data)) / pa1z1(data))))), 
     NA, 
     min(1, 
         py1z0(data)/pa1z1(data),
